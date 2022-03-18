@@ -5,12 +5,12 @@ const { NETWORK } = require(`${basePath}/constants/network.js`);
 const network = NETWORK.eth;
 
 // General metadata for Ethereum
-const namePrefix = "Your Collection";
+const namePrefix = "Greek Letters";
 const description = "Remember to replace this description";
 const baseUri = "ipfs://NewUriToReplace";
 
 const solanaMetadata = {
-  symbol: "YC",
+  symbol: "GL",
   seller_fee_basis_points: 1000, // Define how much % you want from secondary market sales 1000 = 10%
   external_url: "https://www.youtube.com/c/hashlipsnft",
   creators: [
@@ -24,14 +24,35 @@ const solanaMetadata = {
 // If you have selected Solana then the collection starts from 0 automatically
 const layerConfigurations = [
   {
-    growEditionSizeTo: 5,
+    growEditionSizeTo: 50,
+    // layersOrder: [
+    //   { name: "Background" },
+    //   { name: "Eyeball" },
+    //   { name: "Eye color" },
+    //   { name: "Iris" },
+    //   { name: "Shine" },
+    //   { name: "Bottom lid" },
+    //   { name: "Top lid" },
+    // ],
+
     layersOrder: [
-      { name: "Background" },
+      { name: "Background" ,
+        options: {
+          bypassDNA: false,
+        }
+      },
       { name: "Eyeball" },
-      { name: "Eye color" },
+      {
+        name: "Eye color",
+        options: {
+          blend: MODE.destinationIn,
+          opacity: 0.2,
+          displayName: "Awesome Eye Color",
+        },
+      },
       { name: "Iris" },
       { name: "Shine" },
-      { name: "Bottom lid" },
+      { name: "Bottom lid", options: { blend: MODE.overlay, opacity: 0.7 } },
       { name: "Top lid" },
     ],
   },
