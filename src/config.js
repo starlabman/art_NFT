@@ -6,12 +6,12 @@ const network = NETWORK.eth;
 
 // General metadata for Ethereum
 const namePrefix = "Greek Letters";
-const description = "Remember to replace this description";
-const baseUri = "ipfs://NewUriToReplace";
+const description = "This is the first Art NFT in Greek Letters Collection";
+const baseUri = "ipfs://QmU1dK38YCgpZy8RCpHWG1fQgs2KGavpTTKKUj5uAQVT5u";
 
 const solanaMetadata = {
   symbol: "GL",
-  seller_fee_basis_points: 1000, // Define how much % you want from secondary market sales 1000 = 10%
+  seller_fee_basis_points: 10000, // Define how much % you want from secondary market sales 1000 = 10%
   external_url: "https://www.youtube.com/c/hashlipsnft",
   creators: [
     {
